@@ -73,7 +73,7 @@ fastify.post<{
 );
 
 try {
-  await fastify.listen(3186);
+  await fastify.listen(3186, "0.0.0.0");
 } catch (err) {
   fastify.log.error(err);
   process.exit(1);
