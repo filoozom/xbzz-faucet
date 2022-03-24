@@ -1,0 +1,13 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "target": "es2021",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "include": ["./src/**/*"]
+}
