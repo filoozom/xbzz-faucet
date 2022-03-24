@@ -7,7 +7,6 @@ import Pino from "pino";
 import { FromSchema } from "json-schema-to-ts";
 
 import { Wallet, providers, Contract } from "ethers";
-import { NonceManager } from "@ethersproject/experimental";
 import fastifySensible from "fastify-sensible";
 
 // Config
@@ -33,8 +32,7 @@ fastify.register(fastifySensible);
 // Walllet
 const { JsonRpcProvider } = providers;
 const provider = new JsonRpcProvider(RPC_URL);
-const signer = new Wallet(PRIVATE_KEY, provider);
-const wallet = new NonceManager(signer);
+const wallet = new Wallet(PRIVATE_KEY, provider);
 
 // Contract
 const abiPath = path.resolve(fileURLToPath(import.meta.url), "../abi.json");
