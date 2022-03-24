@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:16-alpine AS builder
 
 WORKDIR /src
 ENV NODE_ENV production
@@ -14,4 +14,7 @@ RUN npm ci --no-production
 
 COPY . .
 
-CMD ["npm", "start"]
+RUN npm run build \
+  && cp src/abi.json dist/
+
+CMD ["node", "dist/index.js"]
