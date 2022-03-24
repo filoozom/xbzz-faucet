@@ -6,7 +6,8 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node dist/index.js"
+    "start": "npm run build && node dist/index.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Philippe Schommers <philippe@schommers.be>",
